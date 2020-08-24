@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Middleware;
-
 use Closure;
+
 
 class authUsers
 {
@@ -17,7 +17,7 @@ class authUsers
     {
         
         if(auth()->user()->role != 'admin'){
-            return redirect()->route('home');
+            return redirect()->route('admin.home');
         }
         
         return $next($request);

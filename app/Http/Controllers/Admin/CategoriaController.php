@@ -2,18 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Categoria;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Pedido;
 
-class PedidosController extends Controller
+class CategoriaController extends Controller
 {
-    protected $pedido;
-
-    public function __construct(Pedido $pedido){
-        $this->pedido = $pedido;
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,10 +15,7 @@ class PedidosController extends Controller
      */
     public function index()
     {
-     
-        $pedidos = $this->pedido->paginate(10);
-        return view('admin.pedidos.index', compact('pedidos'));
-
+        //
     }
 
     /**
@@ -45,15 +36,27 @@ class PedidosController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Categoria  $categoria
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Categoria $categoria)
+    {
+        //
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Categoria $categoria)
     {
         //
     }
@@ -62,10 +65,10 @@ class PedidosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Categoria $categoria)
     {
         //
     }
@@ -73,16 +76,11 @@ class PedidosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Categoria $categoria)
     {
         //
-    }
-
-
-    public function piru(Request $req){
-
     }
 }

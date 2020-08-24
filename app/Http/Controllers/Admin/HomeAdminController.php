@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class HomeAdminController extends Controller
         $fornecedores   = Fornecedor::all();
         $pedidos        = Pedido::all();
 
-        return view ('admin.index', compact('produtos', 'fornecedores', 'clientes', 'pedidos'));
+        return view('admin.index', compact('produtos', 'fornecedores', 'clientes', 'pedidos'));
 
     }
 }

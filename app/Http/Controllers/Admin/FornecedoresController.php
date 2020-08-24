@@ -13,12 +13,13 @@ class FornecedoresController extends Controller
 
     public function __construct(Fornecedor $fornecedor){
         $this->fornecedor = $fornecedor;
+        
     }
     
     public function index()
     {
         $fornecedores = $this->fornecedor->paginate(10);
-        
+    
         return view('admin.fornecedores.index', compact('fornecedores'));
         
     }
